@@ -1,0 +1,111 @@
+[{
+  "_id": {
+    "$oid": "6004e8a14ae65f35a8a0bd97"
+  },
+  "tipo_usuario": "user",
+  "apellido_materno": "",
+  "pais": "",
+  "ciudad": "",
+  "fecha_nacimiento": {
+    "$date": {
+      "$numberLong": "-2208988800000"
+    }
+  },
+  "sexo": "",
+  "is_activo": true,
+  "is_premium": false,
+  "url_avatar": "",
+  "correo": "daniel@gmail.com",
+  "password": "$2b$12$YkYIB5ixmY8ndQZMNYBs8u.5gyL8NzbFMFcp29SWToPzEFHvfNO.K",
+  "nombres": "Daniel",
+  "apellido_paterno": "Angeles",
+  "fecha_registro": {
+    "$date": "2021-01-18T01:47:13.444Z"
+  },
+  "recetas_propias": [],
+  "recetas_favoritas": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6004ec4b48bf513c38a34d16"
+  },
+  "tipo_usuario": "user",
+  "apellido_materno": "Rengifo",
+  "pais": "Peru",
+  "ciudad": "",
+  "fecha_nacimiento": {
+    "$date": {
+      "$numberLong": "-2208988800000"
+    }
+  },
+  "sexo": "",
+  "is_activo": false,
+  "is_premium": false,
+  "url_avatar": "",
+  "correo": "aleeex@hotmail.com",
+  "password": "$2b$12$zhG8W0luQqN93vpOX2GVOOzX1X8DW5EX/Yn8nA5nKVl34VJcJar26",
+  "nombres": "Alexander",
+  "apellido_paterno": "Angeles",
+  "fecha_registro": {
+    "$date": "2021-01-18T02:02:51.659Z"
+  },
+  "recetas_propias": [],
+  "recetas_favoritas": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6004ed5948bf513c38a34d17"
+  },
+  "tipo_usuario": "user",
+  "apellido_materno": "Rengifo",
+  "pais": "",
+  "ciudad": "",
+  "fecha_nacimiento": {
+    "$date": {
+      "$numberLong": "-2208988800000"
+    }
+  },
+  "sexo": "",
+  "is_activo": true,
+  "is_premium": true,
+  "url_avatar": "",
+  "correo": "jorge_angeles@hotmail.com",
+  "password": "$2b$12$L/WNArpD3hBbvS5KepBx0OE4MAtSe4BlRqhKpYRGeQ0zkvUmQQHHu",
+  "nombres": "Jorge",
+  "apellido_paterno": "Angeles",
+  "fecha_registro": {
+    "$date": "2021-01-18T02:07:21.757Z"
+  },
+  "recetas_propias": [],
+  "recetas_favoritas": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6008eb6fc448c8195475d4f4"
+  },
+  "tipo_usuario": "user",
+  "apellido_materno": "Vargas",
+  "pais": "",
+  "ciudad": "",
+  "fecha_nacimiento": {
+    "$date": {
+      "$numberLong": "-2208988800000"
+    }
+  },
+  "sexo": "",
+  "is_activo": true,
+  "is_premium": false,
+  "url_avatar": "",
+  "recetas_propias": [],
+  "recetas_favoritas": [
+    "60068b6a2add8807246e0b16"
+  ],
+  "correo": "adri_rojas@hotmail.com",
+  "password": "$2b$12$Qw52wdVxAw33y9yDjNcHxufgyHrhrlcB5iCZqyPiJ2EIY22.c2Wwi",
+  "nombres": "Adriana",
+  "apellido_paterno": "Rojas",
+  "fecha_registro": {
+    "$date": "2021-01-21T02:48:15.099Z"
+  },
+  "__v": 5
+}]

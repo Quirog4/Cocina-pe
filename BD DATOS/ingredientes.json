@@ -1,0 +1,81 @@
+[{
+  "_id": {
+    "$oid": "600530d03541bc33580328e5"
+  },
+  "url_imagen": "",
+  "nombre": "papa",
+  "tipo_ingrediente": "tuberculo",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600530d63541bc33580328e6"
+  },
+  "url_imagen": "",
+  "nombre": "camote",
+  "tipo_ingrediente": "tuberculo",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600530da3541bc33580328e7"
+  },
+  "url_imagen": "",
+  "nombre": "yuca",
+  "tipo_ingrediente": "tuberculo",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600530e73541bc33580328e8"
+  },
+  "url_imagen": "",
+  "nombre": "tomate",
+  "tipo_ingrediente": "verdura",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600530ed3541bc33580328e9"
+  },
+  "url_imagen": "",
+  "nombre": "kion",
+  "tipo_ingrediente": "verdura",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600531213541bc33580328ea"
+  },
+  "url_imagen": "",
+  "nombre": "cebolla",
+  "tipo_ingrediente": "verdura",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600531493541bc33580328eb"
+  },
+  "url_imagen": "",
+  "nombre": "apio",
+  "tipo_ingrediente": "verdura",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6005314e3541bc33580328ec"
+  },
+  "url_imagen": "",
+  "nombre": "zapallo",
+  "tipo_ingrediente": "verdura",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600531a03541bc33580328ed"
+  },
+  "url_imagen": "",
+  "nombre": "garbanzos",
+  "tipo_ingrediente": "frijol",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600531a83541bc33580328ee"
+  },
+  "url_imagen": "",
+  "nombre": "lentejas",
+  "tipo_ingrediente": "frijol",
+  "__v": 0
+}]

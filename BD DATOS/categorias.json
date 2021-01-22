@@ -1,0 +1,29 @@
+[{
+  "_id": {
+    "$oid": "600522c1f9bc2f05600a8366"
+  },
+  "url_imagen": "",
+  "nombre": "criolla",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6005231cce964746280580b8"
+  },
+  "url_imagen": "",
+  "nombre": "selvático",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6005236bce964746280580b9"
+  },
+  "url_imagen": "",
+  "nombre": "costeño",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6005236ece964746280580ba"
+  },
+  "url_imagen": "",
+  "nombre": "marino",
+  "__v": 0
+}]

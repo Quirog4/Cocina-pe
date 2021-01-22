@@ -1,0 +1,38 @@
+[{
+  "_id": {
+    "$oid": "600620b34a40a644f4bf162b"
+  },
+  "ruta_imagen": "",
+  "categoria": [
+    "costeño",
+    "marino"
+  ],
+  "nombre": "cevichee",
+  "descripcion": "plato marino pa comer con la familia",
+  "receta": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600621204a40a644f4bf162c"
+  },
+  "ruta_imagen": "",
+  "categoria": [
+    "criollo"
+  ],
+  "nombre": "lomo saltado",
+  "descripcion": "plato bien criollazo",
+  "receta": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600621564a40a644f4bf162d"
+  },
+  "ruta_imagen": "",
+  "categoria": [
+    "marino"
+  ],
+  "nombre": "sopa de mariscos",
+  "descripcion": "plato marino pa vivir más sabroso",
+  "receta": [],
+  "__v": 0
+}]
