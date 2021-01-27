@@ -102,7 +102,7 @@ router.put(
 // );
 
 router.post(
-  "/ingredientes/id", [auth],
+  "/ingredientes", [auth],
   async (req, res) => {
     const listarRecetas = await recetaService.obtenerRecetaPorIngredientesId(req.body);
     if(listarRecetas instanceof Error ){
@@ -116,3 +116,4 @@ router.post(
 
 
 module.exports = router;
+

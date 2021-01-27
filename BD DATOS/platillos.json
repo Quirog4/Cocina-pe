@@ -35,4 +35,257 @@
   "descripcion": "plato marino pa vivir más sabroso",
   "receta": [],
   "__v": 0
+},{
+  "_id": {
+    "$oid": "600f7c06b5c9f23054ad2b61"
+  },
+  "ruta_imagen": "",
+  "categoria": [
+    "marino"
+  ],
+  "nombre": "sopa de macaco",
+  "descripcion": "aaa",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600f7c0bb5c9f23054ad2b62"
+  },
+  "ruta_imagen": "",
+  "categoria": [
+    "marino"
+  ],
+  "nombre": "a",
+  "descripcion": "aaa",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600f7c13b5c9f23054ad2b63"
+  },
+  "ruta_imagen": "",
+  "categoria": [
+    "marino"
+  ],
+  "nombre": "b",
+  "descripcion": "aaa",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600f7c16b5c9f23054ad2b64"
+  },
+  "ruta_imagen": "",
+  "categoria": [
+    "marino"
+  ],
+  "nombre": "c",
+  "descripcion": "aaa",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600f7c19b5c9f23054ad2b65"
+  },
+  "ruta_imagen": "",
+  "categoria": [
+    "marino"
+  ],
+  "nombre": "d",
+  "descripcion": "aaa",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600f7c1cb5c9f23054ad2b66"
+  },
+  "ruta_imagen": "",
+  "categoria": [
+    "marino"
+  ],
+  "nombre": "e",
+  "descripcion": "aaa",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600f7c1fb5c9f23054ad2b67"
+  },
+  "ruta_imagen": "",
+  "categoria": [
+    "marino"
+  ],
+  "nombre": "f",
+  "descripcion": "aaa",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600f7c21b5c9f23054ad2b68"
+  },
+  "ruta_imagen": "",
+  "categoria": [
+    "marino"
+  ],
+  "nombre": "g",
+  "descripcion": "aaa",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600f7c24b5c9f23054ad2b69"
+  },
+  "ruta_imagen": "",
+  "categoria": [
+    "marino"
+  ],
+  "nombre": "h",
+  "descripcion": "aaa",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600f7c2ab5c9f23054ad2b6a"
+  },
+  "ruta_imagen": "",
+  "categoria": [
+    "marino"
+  ],
+  "nombre": "i",
+  "descripcion": "aaa",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600f7c2db5c9f23054ad2b6b"
+  },
+  "ruta_imagen": "",
+  "categoria": [
+    "marino"
+  ],
+  "nombre": "j",
+  "descripcion": "aaa",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600f7c2fb5c9f23054ad2b6c"
+  },
+  "ruta_imagen": "",
+  "categoria": [
+    "marino"
+  ],
+  "nombre": "k",
+  "descripcion": "aaa",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600f7c32b5c9f23054ad2b6d"
+  },
+  "ruta_imagen": "",
+  "categoria": [
+    "marino"
+  ],
+  "nombre": "l",
+  "descripcion": "aaa",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600f7c35b5c9f23054ad2b6e"
+  },
+  "ruta_imagen": "",
+  "categoria": [
+    "marino"
+  ],
+  "nombre": "m",
+  "descripcion": "aaa",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600f7c38b5c9f23054ad2b6f"
+  },
+  "ruta_imagen": "",
+  "categoria": [
+    "marino"
+  ],
+  "nombre": "n",
+  "descripcion": "aaa",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600f7c41b5c9f23054ad2b71"
+  },
+  "ruta_imagen": "",
+  "categoria": [
+    "marino"
+  ],
+  "nombre": "o",
+  "descripcion": "aaa",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600f7c46b5c9f23054ad2b72"
+  },
+  "ruta_imagen": "",
+  "categoria": [
+    "marino"
+  ],
+  "nombre": "p",
+  "descripcion": "aaa",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600f7c48b5c9f23054ad2b73"
+  },
+  "ruta_imagen": "",
+  "categoria": [
+    "marino"
+  ],
+  "nombre": "q",
+  "descripcion": "aaa",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600f7c4db5c9f23054ad2b74"
+  },
+  "ruta_imagen": "",
+  "categoria": [
+    "marino"
+  ],
+  "nombre": "t",
+  "descripcion": "aaa",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600f7c50b5c9f23054ad2b75"
+  },
+  "ruta_imagen": "",
+  "categoria": [
+    "marino"
+  ],
+  "nombre": "x",
+  "descripcion": "aaa",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600f7c56b5c9f23054ad2b76"
+  },
+  "ruta_imagen": "",
+  "categoria": [
+    "marino"
+  ],
+  "nombre": "y",
+  "descripcion": "aaa",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600f7c59b5c9f23054ad2b77"
+  },
+  "ruta_imagen": "",
+  "categoria": [
+    "marino"
+  ],
+  "nombre": "z",
+  "descripcion": "aaa",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600f7c5db5c9f23054ad2b78"
+  },
+  "ruta_imagen": "",
+  "categoria": [
+    "marino"
+  ],
+  "nombre": "w",
+  "descripcion": "aaa",
+  "__v": 0
 }]

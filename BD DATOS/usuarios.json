@@ -2,9 +2,9 @@
   "_id": {
     "$oid": "6004e8a14ae65f35a8a0bd97"
   },
-  "tipo_usuario": "user",
+  "tipo_usuario": "admin",
   "apellido_materno": "",
-  "pais": "",
+  "pais": "Peru",
   "ciudad": "",
   "fecha_nacimiento": {
     "$date": {
@@ -94,7 +94,7 @@
   },
   "sexo": "",
   "is_activo": true,
-  "is_premium": false,
+  "is_premium": true,
   "url_avatar": "",
   "recetas_propias": [],
   "recetas_favoritas": [

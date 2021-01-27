@@ -1,0 +1,24 @@
+.menu-top{
+    &__logo {
+       float: left;
+       width: 120px;
+       height: 31px;
+       margin: 16px 24px 16px 0px;
+       background: rgba(221, 98, 27, 1);
+     }
+
+
+     background: rgba(221, 98, 27, 1);
+     
+     &__menu-item:hover{
+       background-color: red;
+     }
+
+
+     &__menu-item{
+       background-color: rgba(221, 98, 27, 1);
+       font-size: large;
+     }
+}
+
+

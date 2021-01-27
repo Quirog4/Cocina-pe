@@ -27,7 +27,7 @@ exports.listarRecetas = async () => {
     let recetaDB
     try{
         recetaDB = await Receta.find().populate({
-            path: "recetaDB",
+            path: "usuario",
             model: "Usuario",
             select: {
                 '_id': 1,
@@ -54,7 +54,7 @@ exports.obtenerRecetaPorNombre = async (nombre) => {
     let recetaDB
     try{
         recetaDB = await Receta.find({nombre: { $regex: nombre }}).populate({
-            path: "recetaDB",
+            path: "usuario",
             model: "Usuario",
             select: {
                 '_id': 1,
@@ -109,7 +109,7 @@ exports.obtenerRecetaPorIngredientesId = async (params) => {
     let recetaDB
     try{
         recetaDB = await Usuario.find().populate({
-            path: "recetaDB",
+            path: "usuario",
             model: "Usuario",
             select: {
                 '_id': 1,
@@ -161,7 +161,7 @@ exports.obtenerReceta = async (id) => {
     let recetaDB;
     try{
         recetaDB = await Receta.findOne({_id: id}).populate({
-            path: "recetaDB",
+            path: "usuario",
             model: "Usuario",
             select: {
                 '_id': 1,

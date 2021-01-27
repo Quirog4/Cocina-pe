@@ -65,7 +65,7 @@ router.post(
         const token = jwt.sign(
           {
             _id: userDB._id,
-            tipo_usuario: userDB.tipoUsuario,
+            tipo_usuario: userDB.tipo_usuario,
             correo: userDB.correo,
             nombres: userDB.nombres,
             apellido_paterno: userDB.apellido_paterno, 

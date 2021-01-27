@@ -22,7 +22,7 @@ router.post(
 );
 
 router.get(
-    "/", [auth],
+    "/",
     async (req, res) => {
       const listarPlatillos = await platilloService.listarPlatillos();
       if(listarPlatillos instanceof Error ){
