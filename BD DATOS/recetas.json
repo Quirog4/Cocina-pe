@@ -1,7 +1,8 @@
 [{
   "_id": {
-    "$oid": "60068b6a2add8807246e0b16"
+    "$oid": "6014e0685b169228a46ecea4"
   },
+  "ruta_imagen": "",
   "is_publico": true,
   "porciones": "",
   "calorias": "",
@@ -14,15 +15,16 @@
   },
   "descripcion": "receta milenaria de doña pepa pa preparar un rico lomo saltao",
   "fecha_creacion": {
-    "$date": "2021-01-19T07:34:02.592Z"
+    "$date": "2021-01-30T04:28:24.264Z"
   },
   "preparacion": [],
   "ingredientes": [],
   "__v": 0
 },{
   "_id": {
-    "$oid": "60068c12aa4fed347447a63d"
+    "$oid": "6014e06c5b169228a46ecea5"
   },
+  "ruta_imagen": "",
   "is_publico": true,
   "porciones": "",
   "calorias": "",
@@ -35,7 +37,95 @@
   },
   "descripcion": "receta milenaria de doña pepa pa preparar un rico lomo saltao",
   "fecha_creacion": {
-    "$date": "2021-01-19T07:36:50.113Z"
+    "$date": "2021-01-30T04:28:28.002Z"
+  },
+  "preparacion": [],
+  "ingredientes": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6014e0705b169228a46ecea6"
+  },
+  "ruta_imagen": "",
+  "is_publico": true,
+  "porciones": "",
+  "calorias": "",
+  "nombre": "receta de adri",
+  "usuario": {
+    "$oid": "6004e8a14ae65f35a8a0bd97"
+  },
+  "platillo": {
+    "$oid": "600621204a40a644f4bf162c"
+  },
+  "descripcion": "receta milenaria de doña pepa pa preparar un rico lomo saltao",
+  "fecha_creacion": {
+    "$date": "2021-01-30T04:28:32.895Z"
+  },
+  "preparacion": [],
+  "ingredientes": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6014e0745b169228a46ecea7"
+  },
+  "ruta_imagen": "",
+  "is_publico": true,
+  "porciones": "",
+  "calorias": "",
+  "nombre": "receta de jorge",
+  "usuario": {
+    "$oid": "6004e8a14ae65f35a8a0bd97"
+  },
+  "platillo": {
+    "$oid": "600621204a40a644f4bf162c"
+  },
+  "descripcion": "receta milenaria de doña pepa pa preparar un rico lomo saltao",
+  "fecha_creacion": {
+    "$date": "2021-01-30T04:28:36.866Z"
+  },
+  "preparacion": [],
+  "ingredientes": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6014e0785b169228a46ecea8"
+  },
+  "ruta_imagen": "",
+  "is_publico": true,
+  "porciones": "",
+  "calorias": "",
+  "nombre": "receta de alex",
+  "usuario": {
+    "$oid": "6004e8a14ae65f35a8a0bd97"
+  },
+  "platillo": {
+    "$oid": "600621204a40a644f4bf162c"
+  },
+  "descripcion": "receta milenaria de doña pepa pa preparar un rico lomo saltao",
+  "fecha_creacion": {
+    "$date": "2021-01-30T04:28:40.242Z"
+  },
+  "preparacion": [],
+  "ingredientes": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6014e07c5b169228a46ecea9"
+  },
+  "ruta_imagen": "",
+  "is_publico": true,
+  "porciones": "",
+  "calorias": "",
+  "nombre": "receta de daniel",
+  "usuario": {
+    "$oid": "6004e8a14ae65f35a8a0bd97"
+  },
+  "platillo": {
+    "$oid": "600621204a40a644f4bf162c"
+  },
+  "descripcion": "receta milenaria de doña pepa pa preparar un rico lomo saltao",
+  "fecha_creacion": {
+    "$date": "2021-01-30T04:28:44.166Z"
   },
   "preparacion": [],
   "ingredientes": [],

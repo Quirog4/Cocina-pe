@@ -11,7 +11,7 @@ export default function MenuTop() {
     return (
         <>
             <h1 className="menu-top__logo">COCINA PE</h1>
-            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']} style={{color: "red"}, {backgroundColor: "#dd621b"}}>
+            <Menu theme="dark" mode="horizontal" style={{color: "red"}, {backgroundColor: "#dd621b"}}>
                 <Menu.Item className="menu-top__menu-item" key={RUTAS.home}>
                     <Link to={RUTAS.home}>Home</Link>
                 </Menu.Item>

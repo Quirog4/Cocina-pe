@@ -9,6 +9,10 @@ const RecetaSchema = new Schema({
         required: true,
         trim: true
     },
+    ruta_imagen: {
+        type: String,
+        default: ''
+    },
     fecha_creacion: {
         type: Date,
         default: Date.now,

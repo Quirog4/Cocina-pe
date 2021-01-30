@@ -72,6 +72,21 @@ async (req, res) => {
 }
 );
 
+router.get(
+  "/platillos/:id",
+  [auth],
+async (req, res) => {
+  const receta = await recetaService.obtenerRecetaPorPlatillo(req.params.id);
+  if(receta === false){
+    res.status(400).json({ code: 400, data: [], message: "No se encontró la receta." });
+  } else if (receta instanceof Error ){
+    res.status(500).json({ code: 500, data: [], message: "Error al buscar receta." });
+  } else {
+    res.status(200).json({ code: 200, data: receta, message: "Receta: "});
+  }
+}
+);
+
 
 router.put(
   "/:id", [auth], 

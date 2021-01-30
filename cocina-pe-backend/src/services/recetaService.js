@@ -26,7 +26,7 @@ exports.agregarReceta = async (params) => {
 exports.listarRecetas = async () => {
     let recetaDB
     try{
-        recetaDB = await Receta.find().populate({
+        recetaDB = await Receta.find({is_publico: true}).populate({
             path: "usuario",
             model: "Usuario",
             select: {
@@ -53,7 +53,7 @@ exports.listarRecetas = async () => {
 exports.obtenerRecetaPorNombre = async (nombre) => {
     let recetaDB
     try{
-        recetaDB = await Receta.find({nombre: { $regex: nombre }}).populate({
+        recetaDB = await Receta.find({nombre: { $regex: nombre }, is_publico: true}).populate({
             path: "usuario",
             model: "Usuario",
             select: {
@@ -108,7 +108,7 @@ exports.obtenerRecetaPorIngredientesId = async (params) => {
     const cantidad = ingredientes_array.length;
     let recetaDB
     try{
-        recetaDB = await Usuario.find().populate({
+        recetaDB = await Usuario.find({is_publico: true}).populate({
             path: "usuario",
             model: "Usuario",
             select: {
@@ -160,7 +160,7 @@ exports.obtenerRecetaPorIngredientesId = async (params) => {
 exports.obtenerReceta = async (id) => {
     let recetaDB;
     try{
-        recetaDB = await Receta.findOne({_id: id}).populate({
+        recetaDB = await Receta.findOne({_id: id, is_publico: true}).populate({
             path: "usuario",
             model: "Usuario",
             select: {
@@ -187,6 +187,34 @@ exports.obtenerReceta = async (id) => {
         return error
     }
 }
+
+exports.obtenerRecetaPorPlatillo = async (id) => {
+    let recetaDB
+    try{
+        recetaDB = await Receta.find({platillo: id, is_publico: true}).populate({
+            path: "usuario",
+            model: "Usuario",
+            select: {
+                '_id': 1,
+                'apellido_paterno': 1,
+                'nombres': 1,
+            }
+        }).populate({
+            path: "platillo",
+            model: "Platillo",
+            select: {
+                '_id': 1,
+                'categoria': 1,
+                'nombre': 1,
+            }
+        })
+        return recetaDB
+    }catch(error){
+        console.log('Error: ', error.message)
+        return error
+    }
+}
+
 
 exports.modificarReceta = async (params, id) => {
     // const nombre = params.nombre

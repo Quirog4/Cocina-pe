@@ -65,3 +65,12 @@ export const obtenerRecetaPorIngredientesId = async (id,params) => {
         return error.response.data;
     }
 }
+
+export const obtenerRecetaPorPlatillo = async (id) => {
+    try {
+        const respuesta = await clienteAxios.get(`/recetas/platillos/${id}`, HEADERS);
+        return respuesta.data;
+    } catch (error) {
+        return error.response.data;
+    }
+}

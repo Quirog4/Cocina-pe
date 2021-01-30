@@ -2,7 +2,10 @@ import MainLayout from "../layouts/MainLayout";
 import BasicLayout from "../layouts/BasicLayout";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
+import Platillos from "../pages/Platillos";
+import PlatillosId from "../pages/Platillos/PlatillosId";
 import Usuarios from "../pages/Usuarios";
+import Recetas from "../pages/Recetas";
 import { Error404 } from "../pages/Error404";
 import { RUTAS } from "../config/constantes";
 
@@ -24,12 +27,17 @@ const routes = [
       },
       {
         path: RUTAS.platillo,
-        component: Home,
+        component: Platillos,
+        exact: true,
+      },
+      {
+        path: RUTAS.platillo_id,
+        component: PlatillosId,
         exact: true,
       },
       {
         path: RUTAS.receta,
-        component: Home,
+        component: Recetas,
         exact: true,
       },
       {

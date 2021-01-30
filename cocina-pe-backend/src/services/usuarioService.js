@@ -28,10 +28,10 @@ exports.registrarUsuario = async (params) => {
 };
 
 exports.autenticarUsuario = async (params) => {
-  const { usuario, password } = params;
+  const { correo, password } = params;
   let userDB
   try{
-    userDB = await Usuario.findOne({ usuario })
+    userDB = await Usuario.findOne({ correo })
   }catch(error){
     console.log('Error: ', error.message)
     return error

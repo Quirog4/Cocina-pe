@@ -5,9 +5,11 @@ export const expiroToken = () => {
     const seconds = 60;
     const now = (Date.now() + seconds) / 1000;
     if (now > data.exp) {
-        localStorage.removeItem("authData");
+        localStorage.setItem("authData", null);
+        // window.location.href = "/";
+        return true;
     }
-    return now > data.exp;
+    return false
   } else {
       return true;
   }

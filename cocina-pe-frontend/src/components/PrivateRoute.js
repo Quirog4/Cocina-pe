@@ -42,7 +42,9 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       render={(routeProps) => (
-        expiroToken() ? <Redirect to={RUTAS.cocina} /> : <Component {...routeProps} />
+        expiroToken() ? 
+        <Component {...routeProps} />
+        : <Component {...routeProps} />
       )}
     />
 

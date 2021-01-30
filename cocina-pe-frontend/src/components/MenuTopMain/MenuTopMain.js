@@ -12,12 +12,12 @@ export default function MenuTopMain(props) {
         <>
             <h1 className="menu-top__logo">COCINA PE</h1>
             {auth.data.tipo_usuario === "admin" ? (
-                <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']} style={{color: "red"}, {backgroundColor: "#dd621b"}}>
+                <Menu theme="dark" mode="horizontal"style={{color: "red"}, {backgroundColor: "#dd621b"}}>
                     <Menu.Item className="menu-top__menu-item" key={RUTAS.cocina}>
                         <Link to={RUTAS.cocina}>Home</Link>
                     </Menu.Item>
-                    <Menu.Item className="menu-top__menu-item" key={RUTAS.receta}>
-                        <Link to={RUTAS.receta}>Recetas</Link>
+                    <Menu.Item className="menu-top__menu-item" key={RUTAS.platillo}>
+                        <Link to={RUTAS.platillo}>Platillos</Link>
                     </Menu.Item>
                     <Menu.Item className="menu-top__menu-item" key={RUTAS.favorito}>
                         <Link to={RUTAS.favorito}>Favoritos</Link>
@@ -28,7 +28,7 @@ export default function MenuTopMain(props) {
                     
                 </Menu>
             ) : (
-                <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']} style={{color: "red"}, {backgroundColor: "#dd621b"}}>
+                <Menu theme="dark" mode="horizontal" style={{color: "red"}, {backgroundColor: "#dd621b"}}>
                     <Menu.Item className="menu-top__menu-item" key={RUTAS.cocina}>
                         <Link to={RUTAS.cocina}>Home</Link>
                     </Menu.Item>
