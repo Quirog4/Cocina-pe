@@ -4,7 +4,7 @@ import { HEADERS } from "../config/constantes";
 
 export const agregarCategoria = async (params) => {
     try {
-        const respuesta = await clienteAxios.post('/categorias/', params);
+        const respuesta = await clienteAxios.post('/categorias/', params, HEADERS);
         return respuesta.data;
     } catch (error) {
         return error.response.data;

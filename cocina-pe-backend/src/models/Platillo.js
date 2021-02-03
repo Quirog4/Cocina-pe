@@ -30,6 +30,10 @@ const RecetaSchema = new Schema({
     },
     is_publico: {
         type: Boolean,
+        default: false
+    },
+    is_activo: {
+        type: Boolean,
         default: true
     },
     descripcion: {
@@ -50,7 +54,7 @@ const RecetaSchema = new Schema({
     preparacion: [{
         nro_orden: {
             type: Number,
-            required: true,
+            // required: true,
         },
         detalle: {
             type: String,
@@ -70,19 +74,23 @@ const RecetaSchema = new Schema({
             required: true
         },
         ingrediente: {
-            type: IngredienteSchema,
+            type: Schema.Types.ObjectId,
+            ref: 'Ingrediente',
             required: false
         },
         cantidad: {
-            type: Number,
-            required: false
+            type: String,
+            required: false,
+            default: '0'
         },
         unidad: {
             type: String,
-            required: false
+            required: false,
+            default: ''
         }
     }]
 })
+
 
 
 const PlatilloSchema = new Schema({

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import routes from "./config/routes";
 
 function App() {
+  localStorage.setItem('url_imagen_base64','');
   return (
     <Router>
       <Switch>

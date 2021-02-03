@@ -2,6 +2,14 @@ import React from 'react';
 import { Menu } from 'antd';
 import { Link } from "react-router-dom";
 import './MenuTop.scss'
+import {
+    HomeOutlined,
+    UserOutlined,
+    ScheduleOutlined,
+    PoweroffOutlined,
+    TeamOutlined,
+  } from "@ant-design/icons";
+
 
 import { RUTAS } from "../../config/constantes";
 

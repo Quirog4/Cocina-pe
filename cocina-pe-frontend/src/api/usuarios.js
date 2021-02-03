@@ -4,7 +4,7 @@ import { HEADERS } from "../config/constantes";
 
 export const login = async (params) => {
     try {
-        const respuesta = await clienteAxios.post('/usuarios/login', params);
+        const respuesta = await clienteAxios.post('/usuarios/login', params, HEADERS);
         return respuesta.data;
     } catch (error) {
         return error.response.data;

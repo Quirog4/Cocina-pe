@@ -8,7 +8,7 @@ export const RUTAS = {
   platillo: "/cocina/platillos",
   platillo_id: "/cocina/platillos/:id",
   receta: "/cocina/recetas/:id",
-  // receta_id: "/cocina/recetas/:id",
+  edit_receta: "/cocina/recetas/editar/:id",
   favorito: "/cocina/favoritos",
 
 

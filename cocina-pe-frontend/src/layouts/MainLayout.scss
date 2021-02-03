@@ -39,6 +39,26 @@
     
 }
 
+.header {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-top: 15px;
+  
+    &-button {
+      margin-left: 1150px;
+    }
+  
+  }
+
+// .ant-btn-primary {
+//     background-color: #ad4e00 !important;
+//     border-color: #ad4e00 !important;
+// }
+
+// .ant-btn-primary:hover {
+//     background-color: red !important;
+//     border-color: red !important;
+// }
 
 // .site-layout-background {
 //   background: #fff;

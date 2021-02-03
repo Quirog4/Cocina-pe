@@ -8,17 +8,17 @@
      }
 
 
-     background: rgba(221, 98, 27, 1);
+     background: #fa541c(221, 98, 27, 1);
      
-     &__menu-item:hover{
-       background-color: red;
-     }
 
 
      &__menu-item{
        background-color: rgba(221, 98, 27, 1);
        font-size: large;
      }
-}
+     &__btn-header {
+      margin-left: 50%;
 
+     }
+}
 

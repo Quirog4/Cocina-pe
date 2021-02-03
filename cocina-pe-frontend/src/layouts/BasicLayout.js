@@ -1,11 +1,18 @@
 import React, {useContext} from 'react'
 import {Switch} from 'react-router-dom';
 import PublicRoute from '../components/PublicRoute'
-import { Layout } from 'antd';
+import { Layout, Button } from 'antd';
 import MenuTop from '../components/MenuTop'
 import { authContext } from "../providers/AuthContext";
 import { Route,  Redirect, useHistory } from "react-router-dom";
 import Home from "../pages/Home";
+import {
+  HomeOutlined,
+  UserOutlined,
+  ScheduleOutlined,
+  PoweroffOutlined,
+  TeamOutlined,
+} from "@ant-design/icons";
 import './BasicLayout.scss'
 
 export default function BasicLayout(props) {
@@ -28,6 +35,16 @@ export default function BasicLayout(props) {
           <Layout className="layout-basic">
               <Header className="layout-basic__header">
                   <MenuTop />
+                  <div className="header">
+                    <Button
+                      className="header-button"
+                      type="primary"
+                      icon={<PoweroffOutlined />}
+                      href={`/login`}
+                    >
+                      Ingresar
+                    </Button>
+                  </div>
               </Header>
               <div className="layout-basic__header-brown"></div>
               <Content className="layout-basic__content">

@@ -4,7 +4,7 @@ import { HEADERS } from "../config/constantes";
 
 export const agregarReceta = async (params) => {
     try {
-        const respuesta = await clienteAxios.post('/recetas/', params);
+        const respuesta = await clienteAxios.post('/recetas/', params, HEADERS);
         return respuesta.data;
     } catch (error) {
         return error.response.data;
@@ -69,6 +69,15 @@ export const obtenerRecetaPorIngredientesId = async (id,params) => {
 export const obtenerRecetaPorPlatillo = async (id) => {
     try {
         const respuesta = await clienteAxios.get(`/recetas/platillos/${id}`, HEADERS);
+        return respuesta.data;
+    } catch (error) {
+        return error.response.data;
+    }
+}
+
+export const obtenerMisRecetas = async (id) => {
+    try {
+        const respuesta = await clienteAxios.get(`/recetas/usuario/${id}`, HEADERS);
         return respuesta.data;
     } catch (error) {
         return error.response.data;

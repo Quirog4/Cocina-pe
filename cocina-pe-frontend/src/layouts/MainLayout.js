@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Layout, Menu, Button, Typography, Image, Avatar } from "antd";
+import { Layout, Menu, Button, Typography, Image, Avatar, Row, Col } from "antd";
 import { Route, Switch, Redirect, useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import {
@@ -14,7 +14,6 @@ import { authContext } from "../providers/AuthContext";
 import PrivateRoute from "../components/PrivateRoute";
 import "./MainLayout.scss";
 import { RUTAS } from "../config/constantes";
-import MenuTop from '../components/MenuTop'
 import MenuTopMain from '../components/MenuTopMain'
 
 
@@ -50,7 +49,7 @@ export default function MainLayout(props) {
       {/*TO DO: Menu sider*/}
           <Layout className="layout-main">
               <Header className="layout-main__header">
-                  <MenuTopMain auth={auth}/>
+                  <MenuTopMain auth={auth} onCollapse={onCollapse} onLogOut={onLogOut}/>
               </Header>
               <div className="layout-main__header-brown"></div>
               <Content className="layout-main__content">

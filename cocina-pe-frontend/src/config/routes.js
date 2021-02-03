@@ -6,6 +6,8 @@ import Platillos from "../pages/Platillos";
 import PlatillosId from "../pages/Platillos/PlatillosId";
 import Usuarios from "../pages/Usuarios";
 import Recetas from "../pages/Recetas";
+import EditReceta from "../pages/Recetas/EditReceta";
+import Favoritos from "../pages/Favoritos";
 import { Error404 } from "../pages/Error404";
 import { RUTAS } from "../config/constantes";
 
@@ -41,8 +43,13 @@ const routes = [
         exact: true,
       },
       {
+        path: RUTAS.edit_receta,
+        component: EditReceta,
+        exact: true,
+      },
+      {
         path: RUTAS.favorito,
-        component: Home,
+        component: Favoritos,
         exact: true,
       },
       {
