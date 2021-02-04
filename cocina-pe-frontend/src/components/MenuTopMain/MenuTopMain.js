@@ -43,9 +43,6 @@ export default function MenuTopMain(props) {
                     <Menu.Item className="menu-top__menu-item" key={RUTAS.platillo}>
                         <Link to={RUTAS.platillo}>Platillos</Link>
                     </Menu.Item>
-                    <Menu.Item className="menu-top__menu-item" key={RUTAS.favorito}>
-                        <Link to={RUTAS.favorito}>Favoritos</Link>
-                    </Menu.Item>
                     <Menu.Item className="menu-top__menu-item" key={`/cocina/usuarios/${auth.data._id}`}>
                         <Link to={`/cocina/usuarios/${auth.data._id}`}>Mi perfil</Link>
                     </Menu.Item>
@@ -61,9 +58,6 @@ export default function MenuTopMain(props) {
                     </Menu.Item>
                     <Menu.Item className="menu-top__menu-item" key={RUTAS.platillo}>
                         <Link to={RUTAS.platillo}>Platillos</Link>
-                    </Menu.Item>
-                    <Menu.Item className="menu-top__menu-item" key={RUTAS.favorito}>
-                        <Link to={RUTAS.favorito}>Favoritos</Link>
                     </Menu.Item>
                     <Menu.Item className="menu-top__menu-item" key={`/cocina/usuarios/${auth.data._id}`}>
                         <Link to={`/cocina/usuarios/${auth.data._id}`}>Mi perfil</Link>

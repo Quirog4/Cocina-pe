@@ -27,10 +27,6 @@ export default function MenuTop() {
                 <Menu.Item className="menu-top__menu-item" key={'1'}>
                     <Link to={RUTAS.login}>Recetas</Link>
                 </Menu.Item>
-
-                <Menu.Item className="menu-top__menu-item" key={'2'}>
-                    <Link to={RUTAS.login}>Favoritos</Link>
-                </Menu.Item>
             </Menu>
         </>
     );
