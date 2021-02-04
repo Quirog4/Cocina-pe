@@ -50,7 +50,7 @@ exports.autenticarUsuario = async (params) => {
 exports.listarUsuarios = async () => {
   let usuariosDB
   try{
-      usuariosDB = await Usuario.find({tipo_usuario: "user"})
+      usuariosDB = await Usuario.find({tipo_usuario: "user", is_activo: true})
       return usuariosDB
   }catch(error){
       console.log('Error: ', error.message)
@@ -61,7 +61,7 @@ exports.listarUsuarios = async () => {
 exports.listarUsuariosPremium = async () => {
   let usuariosDB
   try{
-      usuariosDB = await Usuario.find({tipo_usuario: "user", is_premium: true})
+      usuariosDB = await Usuario.find({tipo_usuario: "user", is_activo: true, is_premium: true})
       return usuariosDB
   }catch(error){
       console.log('Error: ', error.message)
@@ -134,8 +134,6 @@ exports.recetaFavorita = async (params) => {
       return error
   }
   if(usuario){
-    console.log('hola');
-    
       try{
           const find = usuario.recetas_favoritas.find(fav => fav == idReceta)
           if(find === undefined){
@@ -160,6 +158,7 @@ exports.recetaFavorita = async (params) => {
       return 'no encontrado'
   }
 }
+
 
 exports.modificarUsuario = async (params, id) => {
   const objeto = params

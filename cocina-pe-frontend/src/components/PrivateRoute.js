@@ -29,22 +29,28 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     });
   }*/
 
-  if (auth.data.tipo_usuario === 'user' && !expiroToken()) {
-    return (
-      <>
-        <Route path={RUTAS.cocina} component={Home}/>
-        <Redirect to={RUTAS.cocina} />
-      </>
-    )
+  // if (auth.data.tipo_usuario === 'user' && !expiroToken()) {
+  if (auth.data === null ) {
+    window.location.href = '/'
   }
+      
+    // }
+    // return (
+    //   <>
+    //     <Route path={RUTAS.cocina} component={Home}/>
+    //     <Redirect to={RUTAS.cocina} />
+    //   </>
+    // )
+  
   
   return (
     <Route
       {...rest}
       render={(routeProps) => (
-        expiroToken() ? 
+        // expiroToken() ? 
+        // <Component {...routeProps} />
+        // : 
         <Component {...routeProps} />
-        : <Component {...routeProps} />
       )}
     />
 

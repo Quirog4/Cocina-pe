@@ -83,3 +83,12 @@ export const obtenerMisRecetas = async (id) => {
         return error.response.data;
     }
 }
+
+export const obtenerMisFavoritos = async (params) => {
+    try {
+        const respuesta = await clienteAxios.post(`/recetas/favoritos/`,params, HEADERS);
+        return respuesta.data;
+    } catch (error) {
+        return error.response.data;
+    }
+}

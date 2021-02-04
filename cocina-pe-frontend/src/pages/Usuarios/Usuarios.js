@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Button, PageHeader,  Divider, Space, Table } from "antd";
-import { HomeOutlined, EditOutlined } from "@ant-design/icons";
+import { Row, Col, Button, PageHeader,  Divider, Space, Table, notification, Modal as ModalAntd } from "antd";
+import { HomeOutlined, EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import Modal from "../../components/Modal";
-import { listaUsuarios } from "../../api/usuarios";
+import { listaUsuarios, modificarUsuario } from "../../api/usuarios";
 // import AddUsuarioModal from "../../components/Usuarios/AddUsuarioModal";
 // import EditUsiarioModal from "../../components/Usuarios/EditUsiarioModal";
 import "./Usuarios.scss";
 import "../Container.scss"
-
+const { confirm } = ModalAntd;
 export default function Usuario() {
-  // const [isVisibleModal, setIsVisibleModal] = useState(false);
+  const [isVisibleModal, setIsVisibleModal] = useState(false);
   const [modalTitle, setModalTitle] = useState("");
   // const [modalContent, setModalContent] = useState(null);
   const [reloadUsuario, setReloadUsuario] = useState(false);
@@ -19,19 +19,22 @@ export default function Usuario() {
   useEffect(() => {
     async function fetchData() {
       const response = await listaUsuarios();
+      console.log(response.data);
+      
       if (response) {
         let newArr = response.data.map(function (item) {
           return {
             _id: item._id,
             correo: item.correo,
             nombre: `${item.nombres} ${item.apellido_paterno} ${item.apellido_materno}`,
+            is_premium: item.is_premium,
           };
         });
         setBaseData(newArr);
         setIsLoading(false);
       }
-      setReloadUsuario(false)
     }
+    setReloadUsuario(false)
     fetchData();
   }, [reloadUsuario]);
 
@@ -49,6 +52,14 @@ export default function Usuario() {
 
   const columns = [
     {
+      title: "Correo",
+      dataIndex: "correo",
+      key: "correo",
+      sorter: (a, b) => a.correo.localeCompare(b.correo),
+      sortDirections: ["descend", "ascend"],
+      render: (text) => text,
+    },
+    {
       title: "Nombre",
       dataIndex: "nombre",
       key: "nombre",
@@ -57,20 +68,62 @@ export default function Usuario() {
       render: (text) => text,
     },
     {
+      title: "Premium",
+      dataIndex: "is_premium",
+      key: "is_premium",
+      render: (record) => record === true ? <a>Sí</a> : <a>No</a>
+    },
+    {
       title: "Acciones",
       key: "action",
       render: (text, record) => (
         <Space size="middle">
             {" "}
             <Button
-                type="primary"
-                icon={<EditOutlined />}
-                onClick={() => editUsuario(record._id)}
+                type="danger"
+                icon={<DeleteOutlined />}
+                onClick={() => eliminarUsuario(record._id, record.nombre, record.apellido_paterno)}
             />
         </Space>
       ),
     },
   ];
+
+  const eliminarUsuario = (id, nombre, apellido_paterno) => {
+    let titulo = 'Eliminar usuario'
+    let contenido = `Al eliminar al usuario "${nombre} ${apellido_paterno}" este no podrá acceder nuevamente a su cuenta. ¿Está seguro que desea eliminar al usuario?"`
+    let text = 'Eliminar'
+    confirm({
+      title: titulo,
+      content: contenido,
+      okText: text,
+      okType: "danger",
+      cancelText: "Cancelar",
+      async onOk() {
+        let response = await modificarUsuario(id, {is_activo: false});
+
+        if (response.code === 200) {
+          notification["success"]({
+            message: "Éxito",
+            description: response.message,
+          });
+        } else if (response.code === 400) {
+          notification["error"]({
+            message: "Error",
+            description: response.message,
+          });
+        } else {
+          notification["warning"]({
+            message: "Error",
+            description: response.message,
+          });
+        }
+        setReloadUsuario(true)
+        setIsVisibleModal(false);
+      }
+    });
+
+  }
 
   return (
     <>
@@ -78,16 +131,6 @@ export default function Usuario() {
         <PageHeader
           className="site-page-header"
           title="Usuarios"
-          extra={[
-            <Button
-              key="1"
-              type="primary"
-              icon={<HomeOutlined />}
-              onClick={addUsuario}
-            >
-              Nuevo usuario
-            </Button>,
-          ]}
         >
           <Divider style={{ marginTop: "0px" }} />
           <Row>

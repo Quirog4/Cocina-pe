@@ -27,7 +27,13 @@ export default function Login({ history }) {
       let datosLogin = jwtDecode(response.data);
       datosLogin.token = response.data;
       setAuthData(datosLogin);
-      window.location.href = "/cocina";
+      const ruta_siguiente = localStorage.getItem('ruta_siguiente')
+      // if(ruta_siguiente.length != 0){
+      //   window.location.href = ruta_siguiente;
+      // }
+      // else{
+        window.location.href = "/cocina";
+      // }
     } else {
       notification["error"]({
         message: "Error",

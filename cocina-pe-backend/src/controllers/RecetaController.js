@@ -119,6 +119,18 @@ router.put(
   }
 );
 
+router.post(
+  "/favoritos", [auth], 
+  async (req,res) => {
+    const listarRecetas = await recetaService.obtenerMisFavoritos(req.body);
+    if(listarRecetas instanceof Error ){
+      res.status(500).json({ code: 500, data: [], message: "Error al listar receta." });
+    }else{
+      res.status(200).json({ code: 200, data: listarRecetas, message: "Lista de Recetas:."});
+    }
+  }
+);
+
 // router.get(
 //   "/ingredientes/nombre", [auth],
 //   async (req, res) => {

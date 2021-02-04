@@ -21,7 +21,6 @@ export default function MenuTopMain(props) {
     const [modalTitle, setModalTitle] = useState("");
     const [modalContent, setModalContent] = useState(null);
     const {auth, onLogOut} = props;
-
     const addReceta = () => {
         setIsVisibleModal(true);
         setModalTitle("Nueva receta");
@@ -47,6 +46,9 @@ export default function MenuTopMain(props) {
                     <Menu.Item className="menu-top__menu-item" key={RUTAS.favorito}>
                         <Link to={RUTAS.favorito}>Favoritos</Link>
                     </Menu.Item>
+                    <Menu.Item className="menu-top__menu-item" key={`/cocina/usuarios/${auth.data._id}`}>
+                        <Link to={`/cocina/usuarios/${auth.data._id}`}>Mi perfil</Link>
+                    </Menu.Item>
                     <Menu.Item className="menu-top__menu-item" key={RUTAS.usuario}>
                         <Link to={RUTAS.usuario}>Usuarios</Link>
                     </Menu.Item>
@@ -62,6 +64,9 @@ export default function MenuTopMain(props) {
                     </Menu.Item>
                     <Menu.Item className="menu-top__menu-item" key={RUTAS.favorito}>
                         <Link to={RUTAS.favorito}>Favoritos</Link>
+                    </Menu.Item>
+                    <Menu.Item className="menu-top__menu-item" key={`/cocina/usuarios/${auth.data._id}`}>
+                        <Link to={`/cocina/usuarios/${auth.data._id}`}>Mi perfil</Link>
                     </Menu.Item>
                     
                 </Menu>

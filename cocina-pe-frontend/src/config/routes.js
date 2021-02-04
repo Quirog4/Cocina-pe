@@ -5,6 +5,7 @@ import Home from "../pages/Home";
 import Platillos from "../pages/Platillos";
 import PlatillosId from "../pages/Platillos/PlatillosId";
 import Usuarios from "../pages/Usuarios";
+import Perfil from "../pages/Perfil";
 import Recetas from "../pages/Recetas";
 import EditReceta from "../pages/Recetas/EditReceta";
 import Favoritos from "../pages/Favoritos";
@@ -25,6 +26,11 @@ const routes = [
       {
         path: RUTAS.usuario,
         component: Usuarios,
+        exact: true,
+      },
+      {
+        path: RUTAS.perfil,
+        component: Perfil,
         exact: true,
       },
       {

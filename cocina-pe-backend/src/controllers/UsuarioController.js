@@ -71,6 +71,8 @@ router.post(
             apellido_paterno: userDB.apellido_paterno, 
             apellido_materno: userDB.apellido_materno, 
             id: userDB._id,
+            is_premium: userDB.is_premium,
+            recetas_favoritas: userDB.recetas_favoritas,
           },
           JWT_SECRET,
           {

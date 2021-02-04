@@ -5,6 +5,7 @@ export const RUTAS = {
 
   cocina: "/cocina",
   usuario: "/cocina/usuarios",
+  perfil: "/cocina/usuarios/:id",
   platillo: "/cocina/platillos",
   platillo_id: "/cocina/platillos/:id",
   receta: "/cocina/recetas/:id",

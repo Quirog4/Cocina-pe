@@ -52,6 +52,7 @@ exports.listarRecetas = async () => {
     }
 }
 
+
 exports.obtenerRecetaPorNombre = async (nombre) => {
     let recetaDB
     try{
@@ -228,7 +229,7 @@ exports.obtenerRecetaPorPlatillo = async (id) => {
 exports.obtenerMisRecetas = async (id) => {
     let recetaDB
     try{
-        recetaDB = await Receta.find({platillo: id, is_activo: true}).populate({
+        recetaDB = await Receta.find({usuario: id, is_activo: true}).populate({
             path: "usuario",
             model: "Usuario",
             select: {
@@ -254,6 +255,42 @@ exports.obtenerMisRecetas = async (id) => {
     }
 }
 
+exports.obtenerMisFavoritos = async (params) => {
+    let recetaDB
+    try{
+        recetaDB = await Receta.find({is_publico: true, is_activo: true}).populate({
+            path: "usuario",
+            model: "Usuario",
+            select: {
+                '_id': 1,
+                'apellido_paterno': 1,
+                'apellido_materno': 1,
+                'url_avatar': 1,
+                'nombres': 1,
+            }
+        }).populate({
+            path: "platillo",
+            model: "Platillo",
+            select: {
+                '_id': 1,
+                'categoria': 1,
+                'nombre': 1,
+            }
+        })
+        const newRecetaDB = []
+        params.map(item => {
+            recetaDB.map(receta => {
+                if(item == receta._id){
+                    newRecetaDB.push(receta);
+                }
+            })
+        })
+        return newRecetaDB
+    }catch(error){
+        console.log('Error: ', error.message)
+        return error
+    }
+}
 
 exports.modificarReceta = async (params, id) => {
     // const nombre = params.nombre

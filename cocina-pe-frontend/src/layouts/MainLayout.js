@@ -49,7 +49,7 @@ export default function MainLayout(props) {
       {/*TO DO: Menu sider*/}
           <Layout className="layout-main">
               <Header className="layout-main__header">
-                  <MenuTopMain auth={auth} onCollapse={onCollapse} onLogOut={onLogOut}/>
+                  <MenuTopMain auth={auth} onLogOut={onLogOut}/>
               </Header>
               <div className="layout-main__header-brown"></div>
               <Content className="layout-main__content">
@@ -78,57 +78,3 @@ function LoadRoutes({ routes }) {
     </Switch>
   );
 }
-
-
-// <Layout className="site-layout">
-// <Header>
-//   <Image className="logo" src={logo}/>
-//   <div className="header">
-//     <Button
-//       className="header-button"
-//       type="primary"
-//       icon={<PoweroffOutlined />}
-//       onClick={onLogOut}
-//     >
-//       Salir
-//     </Button>
-//     <Title
-//       level={4}
-//       style={{ color: "white" }}
-//     >{`${auth.data.nombres} ${auth.data.apellidos}`}</Title>
-//   </div>
-// </Header>
-// <Layout style={{ minHeight: "90vh" }}>
-//   <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
-//     <div className="logo" />
-
-//     {auth.data.tipo_usuario === "admin" ? (
-//       <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
-//         <Menu.Item key={RUTAS.asistencia} icon={<ScheduleOutlined />}>
-//           <Link to={RUTAS.asistencia}>Asistencia</Link>
-//         </Menu.Item>
-//         <Menu.Item key={RUTAS.empleados} icon={<UserOutlined />}>
-//           <Link to={RUTAS.empleados}>Empleados</Link>
-//         </Menu.Item>
-//         <Menu.Item key={RUTAS.sede} icon={<HomeOutlined />}>
-//           <Link to={RUTAS.sede}>Sedes</Link>
-//         </Menu.Item>
-//         <Menu.Item key={RUTAS.usuarios} icon={<TeamOutlined />}>
-//           <Link to={RUTAS.usuarios}>Usuarios</Link>
-//         </Menu.Item>
-//       </Menu>
-//     ) : (
-//       <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
-//         <Menu.Item key={RUTAS.asistencia} icon={<ScheduleOutlined />}>
-//           <Link to={RUTAS.asistencia}>Asistencia</Link>
-//         </Menu.Item>
-//       </Menu>
-//     )}
-//   </Sider>
-//   <Content style={{ margin: "20px" }}>
-//     <div className="site-layout-background">
-//       <LoadRoutes routes={routes} />
-//     </div>
-//   </Content>
-// </Layout>
-// </Layout>
