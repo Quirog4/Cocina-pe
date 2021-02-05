@@ -10,7 +10,7 @@ export default function EditIngredienteModal(props) {
   const [form] = Form.useForm();
   const [imageUrl, setImageUrl] = useState(null);
   const [fileList, setFileList] = useState([]);
-  const { setIsVisibleModal, setReload, id_receta, baseDataPreparacion, detalle } = props;
+  const { setIsVisibleModal, setReload, id_receta, baseDataPreparacion, detalle, url_imagen } = props;
 
   const onChange =  async ({ fileList: newFileList }) => {
     setFileList(newFileList);
@@ -65,9 +65,11 @@ export default function EditIngredienteModal(props) {
     if(localStorage.getItem('url_imagen_base64').length != 0){
         values.url_imagen = localStorage.getItem('url_imagen_base64')
     }
+    else{
+      values.url_imagen = url_imagen
+    }
+    
     const nuevaPreparacion = []
-    console.log(detalle);
-    console.log(baseDataPreparacion);
     baseDataPreparacion.map(item =>{
       if(detalle == item.detalle){
         nuevaPreparacion.push(values)
@@ -76,7 +78,6 @@ export default function EditIngredienteModal(props) {
         nuevaPreparacion.push(item)
       }
     })
-    console.log(nuevaPreparacion);
     
     const obj = {
       preparacion: nuevaPreparacion
@@ -135,7 +136,6 @@ export default function EditIngredienteModal(props) {
 
       <Form.Item
               label="Nueva imagen"
-              name="url_imagen"
             >
               <Upload
                 customRequest={dummyRequest}

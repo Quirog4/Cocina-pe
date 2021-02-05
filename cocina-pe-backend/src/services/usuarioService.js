@@ -1,6 +1,7 @@
 const Usuario = require("../models/Usuario");
 const bcrypt = require("bcrypt");
 const { empleadoAsistencia } = require("./empleadoService");
+const { mapReduce } = require("../models/Usuario");
 
 exports.registrarUsuario = async (params) => {
   const usuario = new Usuario(params);
@@ -135,17 +136,25 @@ exports.recetaFavorita = async (params) => {
   }
   if(usuario){
       try{
+          const newFavoritos = []
           const find = usuario.recetas_favoritas.find(fav => fav == idReceta)
+          console.log(find);
           if(find === undefined){
-            usuario.recetas_favoritas.unshift(idReceta);
+            newFavoritos.push(idReceta);
+            usuario.recetas_favoritas.map(item => {
+              newFavoritos.push(item)
+            })
+            usuario.recetas_favoritas = newFavoritos;
             usuario.save();
             return false
           }
           else{
-            const index = usuario.recetas_favoritas.indexOf(idReceta);
-            if (index > -1) {
-              usuario.recetas_favoritas.splice(index, 1);
-            }
+            usuario.recetas_favoritas.map(item => {
+              if(item !== idReceta){
+                newFavoritos.push(item)
+              }
+            })
+            usuario.recetas_favoritas = newFavoritos;
             usuario.save();
             return true
           }

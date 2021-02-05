@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useContext} from "react";
 import {
   Row,
   Col,
@@ -13,27 +13,36 @@ import {
   List,
   Avatar,
   Card,
-  Button
+  Button,
+  notification,
+  Modal as ModalAntd
 } from "antd";
 import { HeartTwoTone } from '@ant-design/icons'
 import { Link } from "react-router-dom";
 import { obtenerReceta, listarRecetas } from "../../api/receta";
+import { isRecetaFavorita, recetaFavorita } from "../../api/usuarios";
 import {useParams} from 'react-router-dom'
+import { authContext } from '../../providers/AuthContext';
 import "./Recetas.scss";
 
 const props = {
   rowSelection: {},
 };
-
+const { confirm } = ModalAntd;
 
 export default function Recetas() {
+  
   const {id} = useParams();
   const [receta, setReceta] = useState(null);
+  const { auth } = useContext(authContext);
   const [baseDataReceta, setBaseDataReceta] = useState([]);
+  const [isVisibleModal, setIsVisibleModal] = useState(false);
   const [baseDataIngredientes, setBaseDataIngredientes] = useState([]);
   const [baseDataPreparacion, setBaseDataPreparacion] = useState([]);
+  const [isFavorito,setIsFavorito] = useState(false);
   const [imagen, setImagen] = useState('');
   const [reload, setReload] = useState(true);
+  const [reloadFavorito, setReloadFavorito] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -41,9 +50,6 @@ export default function Recetas() {
         const response = await obtenerReceta(id);
         setBaseDataReceta(response.data)
         const [recetaEspecifica] =response.data
-        console.log(recetaEspecifica.ingredientes.length);
-        
-        // setReceta(recetaEspecifica);
         let newArrIngredientes = recetaEspecifica.ingredientes.length != 0 ? recetaEspecifica.ingredientes.map(function (item) {
           return {
             ingrediente: item.ingrediente,
@@ -60,13 +66,48 @@ export default function Recetas() {
         setBaseDataIngredientes(newArrIngredientes)
         setBaseDataPreparacion(newArrPreparacion)
         setImagen(recetaEspecifica.ruta_imagen)
-        console.log(baseDataIngredientes);
         setIsLoading(false);
         setReload(false);
       }
       listar();
   },[reload])
+
+  useEffect(() => {
+    const recetaFav = async () => {
+      const response = await isRecetaFavorita({id_usuario: auth.data._id, id_receta: id})
+      console.log(response.data);
+       
+      setIsFavorito(response.data);
+      setReloadFavorito(false)
+    }
+    recetaFav()
+  }, [reloadFavorito])
   
+  const modalRecetaFav = async () => {
+    let response = await recetaFavorita({id_usuario: auth.data._id, id_receta: id});
+    if (response.code === 200) {
+      notification["success"]({
+        message: "Éxito",
+        description: response.message,
+      });
+      setIsVisibleModal(false);
+    } else if (response.code === 400) {
+      notification["error"]({
+        message: "Error",
+        description: response.message,
+      });
+      setIsVisibleModal(true);
+    } else {
+      notification["warning"]({
+        message: "Error",
+        description: response.message,
+      });
+      setIsVisibleModal(true);
+    }
+    setReloadFavorito(true)
+
+  };
+
   const columnsIngredientes = [
     {
       title: 'Ingredientes',
@@ -91,10 +132,15 @@ export default function Recetas() {
             itemLayout="horizontal"
             dataSource={baseDataReceta}
             renderItem={item => (
-              <List.Item actions={[            
+              <List.Item actions={[ isFavorito ? <Button
+                type="danger"
+                icon={<HeartTwoTone twoToneColor="#eb2f96" />}
+                onClick={() => modalRecetaFav()}
+              /> :
                 <Button
                   type="dashed"
                   icon={<HeartTwoTone twoToneColor="#eb2f96" />}
+                  onClick={() => modalRecetaFav()}
                 />]}
               >
                 <List.Item.Meta className='list-item-meta-receta'
@@ -139,8 +185,7 @@ export default function Recetas() {
       </Row>
         <Col span={6} offset={1}><h2> Preparación</h2> </Col>
       <Row>
-        <Col span={1}></Col>
-        <Col span={22}>
+        <Col span={24}>
           <div className="site-card-wrapper">
             <Row gutter={16}>
               {
@@ -148,7 +193,8 @@ export default function Recetas() {
                   <>
                     <Col span={1}></Col>
                     <Col span={6}>
-                      <Card type="inner" style={{ width: 390 }}hoverable className='receta-card' title={`Paso ${i + 1}`} bordered={true} cover={
+                      <div className='receta-card'>
+                      <Card type="inner" style={{ width: 390 }}hoverable title={`Paso ${i + 1}`} bordered={true} cover={
                           <Row>
                             <Col span={22} offset={1}>
                               <br/>
@@ -161,6 +207,7 @@ export default function Recetas() {
                       }>
                         {item.detalle}
                       </Card>
+                      </div>
                     </Col>
                     <Col span={1}></Col>
                   </>
@@ -170,7 +217,6 @@ export default function Recetas() {
           </div>
           
         </Col>
-        <Col span={1}></Col>
       </Row>
       <br/>
       </div>

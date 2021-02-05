@@ -113,7 +113,7 @@ export default function EditRecetas() {
     let titulo = 'Convertir a receta pública'
     let contenido = 'Al hacer la receta pública todos las las personas pertenecientes a la comunidad de Cocina Pe podrán verla'
     let text = 'Hacer pública'
-    if(!boleano){
+    if(boleano){
       titulo = 'Convertir a receta privada'
       contenido = 'Al hacer la receta privada solo tú podrás verla en la lista de recetas de Cocina Pe'
       text = 'Hacer Privada'
@@ -266,7 +266,7 @@ export default function EditRecetas() {
     );
   };
 
-  const editPreparacion = (key, detalle) => {
+  const editPreparacion = (key, detalle, url_imagen) => {
     setIsVisibleModal(true);
     setModalTitle("Editar ingrediente");
     setModalContent(
@@ -274,6 +274,7 @@ export default function EditRecetas() {
         setIsVisibleModal={setIsVisibleModal}
         baseDataPreparacion={baseDataPreparacion}
         detalle={detalle}
+        url_imagen={url_imagen}
         id_receta={key}
         setReload={setReload}
       />
@@ -350,8 +351,7 @@ export default function EditRecetas() {
         
       </Row>
       <Row>
-        <Col span={1}></Col>
-        <Col span={22}>
+        <Col span={24}>
           <div className="site-card-wrapper">
             <Row gutter={16}>
               {
@@ -359,7 +359,8 @@ export default function EditRecetas() {
                   <>
                     <Col span={1}></Col>
                     <Col span={6}>
-                      <Card type="inner" style={{ width: 380, marginBottom: 18 }}hoverable className='receta-card' title={`Paso ${i + 1}`} bordered={true} cover={
+                      <div className='receta-card'>
+                      <Card type="inner" style={{ width: 380, marginBottom: 18 }}hoverable title={`Paso ${i + 1}`} bordered={true} cover={
                           <Row>
                             <Col span={22} offset={1}>
                               <br/>
@@ -371,12 +372,13 @@ export default function EditRecetas() {
                           </Row>
                       }
                       actions={[
-                        <EditOutlined key="edit" onClick={()=>editPreparacion(id,item.detalle)}/>,
+                        <EditOutlined key="edit" onClick={()=>editPreparacion(id,item.detalle, item.url_imagen)}/>,
                         <DeleteOutlined key="delete" onClick={()=>deletePreparacion(item.detalle)}/>
                       ]}
                       >
                         {item.detalle}
                       </Card>
+                      </div>
                     </Col>
                     <Col span={1}></Col>
                   </>
@@ -386,7 +388,6 @@ export default function EditRecetas() {
           </div>
           
         </Col>
-        <Col span={1}></Col>
       </Row>
       <br/>
       </div>

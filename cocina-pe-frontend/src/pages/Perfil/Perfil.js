@@ -8,6 +8,7 @@ import "./Perfil.scss";
 import "../Container.scss"
 import { authContext } from "../../providers/AuthContext";
 import { obtenerMisRecetas, obtenerMisFavoritos, modificarReceta } from "../../api/receta";
+import { listaUsuario } from "../../api/usuarios";
 
 const { confirm } = ModalAntd;
 
@@ -28,7 +29,9 @@ export default function Perfil() {
   
   useEffect(() => {
     async function listarPlatillosApi() {
-      let response = await obtenerMisFavoritos(auth.data.recetas_favoritas);
+      let usuario = await listaUsuario(auth.data._id);
+      let response = await obtenerMisFavoritos(usuario.data[0].recetas_favoritas);
+      
       if (response && response.length != 0) {
         let newArr = response.data.map(function (item) {
           return {

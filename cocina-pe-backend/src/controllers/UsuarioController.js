@@ -163,7 +163,7 @@ router.post(
     } else if (existeEmpleado instanceof Error ){
       res.status(500).json({ code: 500, data: [], message: "Error al buscar usuario." });
     } else {
-      res.status(200).json({ code: 200, data: [existeEmpleado], message: "Estado de la receta según el usuario: "});
+      res.status(200).json({ code: 200, data: existeEmpleado, message: "Estado de la receta según el usuario: "});
     }
   }
 );
@@ -172,7 +172,7 @@ router.put(
   "/favoritas/accion",  
   [auth], 
   async (req,res) => {
-    const existeEmpleado = await usuarioService.recetaFavorita(req.body, req.params.id);
+    const existeEmpleado = await usuarioService.recetaFavorita(req.body);
     if (existeEmpleado == 'no encontrado') {
       res.status(400).json({ code: 400, data: [], message: "Usuario no encontrado." });
     } else if (existeEmpleado instanceof Error ){
