@@ -11,7 +11,8 @@ import { authContext } from "../../providers/AuthContext";
 const { confirm } = ModalAs;
 
 export default function Home() {
-  const [reloadPlatillos, setReloadPlatillas] = useState(false);
+  return (<></>);
+ /* const [reloadPlatillos, setReloadPlatillas] = useState(false);
   const [platillos, setPlatillos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [contador, setContador] = useState(-2);
@@ -189,7 +190,7 @@ export default function Home() {
       </div>
     </>
   );
-}
+  */}
 
 const seed = () => {
   let date = new Date();
